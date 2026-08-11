@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donation Request — The Life of a Voice, Honoring Bernadette Bascom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Great+Vibes&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --champagne: #F7F0E6;
+    --cream: #FDF9F3;
+    --blush: #EFDCD8;
+    --rose: #C9909A;
+    --mauve: #A96E76;
+    --gold: #B08D3E;
+    --gold-light: #D4B876;
+    --navy: #2B3A5C;
+    --ink: #4A3F3D;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #e9e2d8;
+    font-family: 'Jost', sans-serif;
+    color: var(--ink);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+  }
+
+  .sheet {
+    width: 8.5in;
+    min-height: 11in;
+    background: var(--mauve);
+    padding: 0.28in;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.18);
+  }
+  .inner {
+    background: var(--champagne);
+    height: 100%;
+    min-height: calc(11in - 0.56in);
+    border-radius: 4px;
+    padding: 0.3in 0.42in 0.26in;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spark { position: absolute; color: var(--gold); pointer-events: none; opacity: 0.7; }
+  .sp1 { top: 0.3in; left: 0.4in; font-size: 20px; }
+  .sp2 { top: 0.55in; right: 0.5in; font-size: 15px; color: var(--gold-light); }
+  .sp3 { top: 3.1in; left: 0.25in; font-size: 13px; }
+  .sp4 { top: 4.4in; right: 0.3in; font-size: 17px; color: var(--gold-light); }
+  .sp5 { bottom: 2.4in; left: 0.35in; font-size: 15px; }
+  .sp6 { bottom: 1.1in; right: 0.4in; font-size: 19px; }
+  .mn1 { position: absolute; top: 1.7in; right: 0.28in; color: var(--rose); opacity: 0.5; font-size: 20px; transform: rotate(10deg); }
+  .mn2 { position: absolute; bottom: 3.6in; left: 0.26in; color: var(--rose); opacity: 0.45; font-size: 18px; transform: rotate(-12deg); }
+
+  /* ---------- Header ---------- */
+  header { text-align: center; margin-bottom: 0.1in; }
+  .honoree {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.05;
+    margin: 0;
+    color: var(--ink);
+  }
+  .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    color: var(--gold);
+    line-height: 1.1;
+    margin: 2px 0 8px;
+  }
+  .event-line {
+    font-weight: 500;
+    font-size: 13.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .day-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--gold);
+    margin-top: 3px;
+  }
+
+  .rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 0.09in 0;
+  }
+
+  /* ---------- The ask ---------- */
+  .ask-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--mauve);
+    margin: 0 0 4px;
+  }
+  .ask-intro {
+    text-align: center;
+    font-size: 13px;
+    max-width: 6.6in;
+    margin: 0 auto 0.1in;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.12in;
+    margin-bottom: 0.1in;
+  }
+  .ask-card {
+    background: var(--cream);
+    border: 1px solid var(--blush);
+    border-radius: 8px;
+    padding: 0.13in 0.16in;
+  }
+  .ask-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .ask-card h3 .tag {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--gold);
+    border-radius: 100px;
+    padding: 2px 9px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  .ask-card p { font-size: 12px; margin: 0 0 5px; }
+  .ask-card ul { margin: 0; padding-left: 15px; font-size: 12px; }
+  .ask-card ul li { margin-bottom: 2px; }
+
+  /* ---------- Recognition strip ---------- */
+  .recog {
+    background: var(--cream);
+    border: 1px solid var(--gold-light);
+    border-radius: 8px;
+    padding: 0.1in 0.16in;
+    margin-bottom: 0.1in;
+  }
+  .recog h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--gold);
+    margin: 0 0 3px;
+    text-align: center;
+  }
+  .recog-items {
+    display: flex;
+    justify-content: center;
+    gap: 0.2in;
+    flex-wrap: wrap;
+    font-size: 11.5px;
+    text-align: center;
+  }
+  .recog-items span::before { content: "\2726\00a0\00a0"; color: var(--gold); font-size: 10px; }
+
+  /* ---------- Company / social proof ---------- */
+  .company-line {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--ink);
+    max-width: 6.4in;
+    margin: 0 auto 0.09in;
+  }
+  .company-line strong { font-style: normal; color: var(--mauve); }
+
+  /* ---------- More ways strip ---------- */
+  .more-ways {
+    background: var(--cream);
+    border: 1px solid var(--blush);
+    border-radius: 8px;
+    padding: 0.09in 0.16in;
+    margin-bottom: 0.1in;
+  }
+  .more-ways h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--mauve);
+    margin: 0 0 4px;
+    text-align: center;
+  }
+  .more-items { font-size: 11px; line-height: 1.5; }
+  .more-items span { display: block; margin-bottom: 3px; }
+  .more-items span::before { content: "\2726\00a0\00a0"; color: var(--gold); font-size: 9px; }
+  .more-items strong { color: var(--navy); }
+
+  /* ---------- Footer / contact ---------- */
+  .contact {
+    background: var(--navy);
+    border-radius: 8px;
+    color: var(--champagne);
+    padding: 0.12in 0.2in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.2in;
+    flex-wrap: wrap;
+  }
+  .contact .who { font-size: 14px; font-weight: 500; }
+  .contact .who small { display: block; font-weight: 400; font-size: 12px; opacity: 0.85; }
+  .contact .links { text-align: right; font-size: 12.5px; line-height: 1.7; }
+  .contact .links strong { color: var(--gold-light); }
+  .org-footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--ink);
+    margin-top: 0.08in;
+    letter-spacing: 0.03em;
+  }
+
+  .placeholder { color: var(--rose); font-weight: 600; }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body { background: none; padding: 0; }
+    .sheet { box-shadow: none; width: 100%; min-height: auto; }
+    @page { size: letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="inner">
+
+    <span class="spark sp1" aria-hidden="true">✦</span>
+    <span class="spark sp2" aria-hidden="true">✧</span>
+    <span class="spark sp3" aria-hidden="true">✦</span>
+    <span class="spark sp4" aria-hidden="true">✧</span>
+    <span class="spark sp5" aria-hidden="true">✦</span>
+    <span class="spark sp6" aria-hidden="true">✧</span>
+    <span class="mn1" aria-hidden="true">♪</span>
+    <span class="mn2" aria-hidden="true">♫</span>
+
+    <header>
+      <h1 class="honoree">Bernadette Bascom</h1>
+      <div class="script">The Life of a Voice</div>
+      <div class="event-line">October 11, 2026 · 5–9 PM · McMenamins Anderson School, Bothell</div>
+      <div class="day-line">✦ The First Bernadette Bascom Day in Bothell ✦</div>
+    </header>
+
+    <div class="rule"></div>
+
+    <h2 class="ask-title">Will You Help Us Celebrate Her?</h2>
+    <p class="ask-intro">
+      Bernadette Bascom, Emmy Award winning vocalist and founder of SPEAK! Music As Language,
+      has spent nearly two decades helping children with disabilities find their voices through
+      music. On October 11, Bothell honors her as a Hometown Hero, and we're inviting local
+      businesses to be part of the celebration.
+    </p>
+
+    <div class="two-col">
+      <div class="ask-card">
+        <h3>Silent Auction Items</h3>
+        <p>Donate an item, experience, service, or gift certificate for our silent auction.
+        Every winning bid goes directly to SPEAK!'s work with children.</p>
+        <ul>
+          <li>Gift certificates and experiences</li>
+          <li>Art, goods, and services</li>
+          <li>Getaways, tickets, and one-of-a-kinds</li>
+        </ul>
+      </div>
+      <div class="ask-card">
+        <h3>Gift Bag Items <span class="tag">80 needed</span></h3>
+        <p>Get your business into the gift bags at our reserved tables — home with our
+        most engaged guests. A <strong>$50 stuffing fee</strong> accompanies each donation
+        and covers assembly of all 80 bags.</p>
+        <ul>
+          <li>Donate 80 items: samples, minis, coupons, or branded keepsakes</li>
+          <li>No product handy? The $50 alone places your card or offer in every bag</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recog">
+      <h3>Every Contributing Business Receives</h3>
+      <div class="recog-items">
+        <span>Name in the printed program</span>
+        <span>Recognition at the event</span>
+        <span>A tax-deductible receipt — SPEAK! is a 501(c)(3) nonprofit</span>
+      </div>
+    </div>
+
+    <p class="company-line">
+      You'll be in good company — the auction already features an
+      <strong>autographed Seahawks helmet</strong>, <strong>works by local artists</strong>,
+      and <strong>a night's stay at McMenamins Anderson School</strong>.
+    </p>
+
+    <div class="more-ways">
+      <h3>More Ways to Be Part of It</h3>
+      <div class="more-items">
+        <span><strong>Sponsor a student's seat, $75</strong> — place a SPEAK! student and their family in the room for Bernadette's night</span>
+        <span><strong>Event sponsorships</strong> — recognition levels for every size of business, ask us for the sponsorship sheet</span>
+        <span><strong>Introductions</strong> — know someone who'd love this? A warm introduction is a real gift too</span>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="contact">
+      <div class="who">
+        Jessica Drake
+        <small>Event Lead · The Life of a Voice</small>
+      </div>
+      <div class="links">
+        <strong>Phone:</strong> 407.242.1238<br>
+        <strong>Email:</strong> jesilu@mac.com<br>
+        <strong>Give online:</strong> bit.ly/SPEAKMusicDonate
+      </div>
+    </div>
+
+    <p class="org-footer">
+      SPEAK! Music As Language · A 501(c)(3) nonprofit · Item pickup or drop-off gladly arranged ·
+      Items appreciated by <span class="placeholder">[date]</span>
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>

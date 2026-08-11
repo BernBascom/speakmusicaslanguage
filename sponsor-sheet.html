@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorship Opportunities — The Life of a Voice, Honoring Bernadette Bascom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Great+Vibes&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --champagne: #F7F0E6;
+    --cream: #FDF9F3;
+    --blush: #EFDCD8;
+    --rose: #C9909A;
+    --mauve: #A96E76;
+    --gold: #B08D3E;
+    --gold-light: #D4B876;
+    --navy: #2B3A5C;
+    --ink: #4A3F3D;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #e9e2d8;
+    font-family: 'Jost', sans-serif;
+    color: var(--ink);
+    line-height: 1.45;
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+  }
+  .sheet {
+    width: 8.5in;
+    min-height: 11in;
+    background: var(--mauve);
+    padding: 0.26in;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.18);
+  }
+  .inner {
+    background: var(--champagne);
+    min-height: calc(11in - 0.52in);
+    border-radius: 4px;
+    padding: 0.26in 0.36in 0.22in;
+    position: relative;
+    overflow: hidden;
+  }
+  .spark { position: absolute; color: var(--gold); pointer-events: none; opacity: 0.65; }
+  .sp1 { top: 0.25in; left: 0.35in; font-size: 17px; }
+  .sp2 { top: 0.5in; right: 0.4in; font-size: 13px; color: var(--gold-light); }
+  .sp3 { bottom: 1.6in; left: 0.28in; font-size: 13px; }
+  .sp4 { bottom: 0.8in; right: 0.32in; font-size: 16px; }
+
+  header { text-align: center; margin-bottom: 0.08in; }
+  .honoree {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 26px;
+    color: var(--gold);
+    line-height: 1.05;
+    margin: 1px 0 5px;
+  }
+  .event-line {
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .sheet-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 21px;
+    color: var(--mauve);
+    margin: 0.06in 0 2px;
+  }
+  .sheet-sub {
+    text-align: center;
+    font-size: 11.5px;
+    max-width: 6.9in;
+    margin: 0 auto 0.1in;
+  }
+
+  /* ---------- Matrix ---------- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--cream);
+    font-size: 10.5px;
+  }
+  th, td {
+    border: 1px solid var(--blush);
+    padding: 4px 6px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  td.benefit {
+    text-align: left;
+    font-weight: 400;
+    width: 2.6in;
+  }
+  thead th {
+    background: var(--mauve);
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+  thead th .lvl-name { font-family: 'Cormorant Garamond', serif; font-size: 14.5px; display: block; }
+  thead th .lvl-price { font-size: 12.5px; color: var(--gold-light); display: block; }
+  thead th .lvl-count { font-size: 8.5px; font-weight: 400; opacity: 0.85; display: block; }
+  thead th.presenting { background: var(--gold); }
+  tbody td .check { color: var(--gold); font-size: 12px; }
+  tbody tr:nth-child(even) td { background: #FBF5EC; }
+  tbody td.detail { font-size: 9.5px; }
+
+  /* ---------- Category sponsors ---------- */
+  .cat-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--gold);
+    margin: 0.1in 0 3px;
+  }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.08in;
+  }
+  .cat-card {
+    background: var(--cream);
+    border: 1px solid var(--blush);
+    border-radius: 6px;
+    padding: 6px 8px;
+    text-align: center;
+  }
+  .cat-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--mauve);
+    margin: 0;
+  }
+  .cat-card .cat-price { font-size: 11px; font-weight: 600; color: var(--gold); }
+  .cat-card p { font-size: 9px; margin: 2px 0 0; line-height: 1.35; }
+
+  /* ---------- Notes + contact ---------- */
+  .notes {
+    font-size: 9.5px;
+    color: var(--ink);
+    margin: 0.08in 0;
+    line-height: 1.45;
+  }
+  .notes strong { color: var(--navy); }
+  .contact {
+    background: var(--navy);
+    border-radius: 6px;
+    color: var(--champagne);
+    padding: 0.09in 0.16in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.15in;
+    flex-wrap: wrap;
+    font-size: 11px;
+  }
+  .contact strong { color: var(--gold-light); }
+  .placeholder { color: var(--rose); font-weight: 600; }
+  .draft-band {
+    text-align: center;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    border: 1px dashed var(--rose);
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-bottom: 0.08in;
+    font-weight: 600;
+  }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .sheet { box-shadow: none; width: 100%; min-height: auto; }
+    @page { size: letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="inner">
+
+    <span class="spark sp1" aria-hidden="true">✦</span>
+    <span class="spark sp2" aria-hidden="true">✧</span>
+    <span class="spark sp3" aria-hidden="true">✦</span>
+    <span class="spark sp4" aria-hidden="true">✧</span>
+
+    <header>
+      <h1 class="honoree">Bernadette Bascom</h1>
+      <div class="script">The Life of a Voice</div>
+      <div class="event-line">October 11, 2026 · 5–9 PM · McMenamins Anderson School, Bothell · The First Bernadette Bascom Day</div>
+    </header>
+
+    <div class="draft-band">Draft for board review — amounts and benefits pending approval</div>
+
+    <h2 class="sheet-title">Sponsorship Opportunities</h2>
+    <p class="sheet-sub">
+      Partner with SPEAK! Music As Language to celebrate Bothell's Hometown Hero and fund
+      music-based speech education for children with disabilities. Around 400 guests expected.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="background: var(--cream);"></th>
+          <th class="presenting"><span class="lvl-name">Presenting</span><span class="lvl-price">$10,000</span><span class="lvl-count">1 available</span></th>
+          <th><span class="lvl-name">Platinum</span><span class="lvl-price">$5,000</span><span class="lvl-count">2 available</span></th>
+          <th><span class="lvl-name">Gold</span><span class="lvl-price">$2,500</span></th>
+          <th><span class="lvl-name">Silver</span><span class="lvl-price">$1,000</span></th>
+          <th><span class="lvl-name">Bronze</span><span class="lvl-price">$500</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="benefit">Event presented as "The Life of a Voice, presented by [Your Name]"</td>
+          <td><span class="check">✦</span></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="benefit">Remarks from the stage during the program</td>
+          <td><span class="check">✦</span></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="benefit">Verbal recognition from the stage</td>
+          <td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="benefit">Program ad (you provide art, we handle layout)</td>
+          <td class="detail">Full page, premium placement</td><td class="detail">Full page</td><td class="detail">Half page</td><td class="detail">Quarter page</td><td class="detail">Name listing</td>
+        </tr>
+        <tr>
+          <td class="benefit">Logo on event signage &amp; slide loop</td>
+          <td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td></td>
+        </tr>
+        <tr>
+          <td class="benefit">Name/logo in slide loop thank-you</td>
+          <td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td>
+        </tr>
+        <tr>
+          <td class="benefit">Social media recognition</td>
+          <td class="detail">Dedicated posts</td><td class="detail">Dedicated post</td><td class="detail">Group posts</td><td class="detail">Group posts</td><td class="detail">Group post</td>
+        </tr>
+        <tr>
+          <td class="benefit">Reserved seats at the gala</td>
+          <td class="detail">10 — a premier table</td><td class="detail">6 premier</td><td class="detail">4 reserved</td><td class="detail">2 reserved</td><td class="detail">2 general</td>
+        </tr>
+        <tr>
+          <td class="benefit">First look at silent auction before doors</td>
+          <td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="benefit">Recognition in post-event thank-you to all guests</td>
+          <td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td><td><span class="check">✦</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="cat-title">Category Sponsorships — one each available</h3>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <h4>Beverage Sponsor</h4>
+        <div class="cat-price">$2,500</div>
+        <p>Your name at the bar all evening + Gold-level recognition</p>
+      </div>
+      <div class="cat-card">
+        <h4>Gift Bag Sponsor</h4>
+        <div class="cat-price">$1,500</div>
+        <p>Your branding on all 80 table gift bags + Silver-level recognition</p>
+      </div>
+      <div class="cat-card">
+        <h4>Photo Booth Sponsor</h4>
+        <div class="cat-price">$1,000</div>
+        <p>Your logo on every print guests take home + Silver-level recognition</p>
+      </div>
+      <div class="cat-card">
+        <h4>Media Sponsor</h4>
+        <div class="cat-price">In-kind</div>
+        <p>Advertising/coverage traded for Gold-level recognition</p>
+      </div>
+    </div>
+
+    <p class="notes">
+      <strong>Tax note:</strong> SPEAK! Music As Language is a 501(c)(3) nonprofit. Sponsorships are
+      tax-deductible less the fair market value of benefits received (seats, dinner); your receipt
+      will state the deductible amount. &nbsp; <strong>Deadline:</strong> sponsor commitments and ad
+      art by <span class="placeholder">September 18, 2026</span> to guarantee printed program placement.
+    </p>
+
+    <div class="contact">
+      <div>Jessica Drake · Event Lead · The Life of a Voice</div>
+      <div><strong>Phone:</strong> 407.242.1238 &nbsp; <strong>Email:</strong> jesilu@mac.com &nbsp; <strong>Give:</strong> bit.ly/SPEAKMusicDonate</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

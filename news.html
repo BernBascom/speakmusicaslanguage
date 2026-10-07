@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News &amp; Events | SPEAK! Music As Language</title>
+<meta name="description" content="News, events, classes, and the monthly student spotlight from SPEAK! Music As Language.">
+<link rel="icon" href="assets/speak-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#161022; --velvet:#221a33; --wine:#5e2434; --wine-deep:#471a27;
+  --gold:#c9a25e; --gold-bright:#e0bd7d; --cream:#f3e9d6; --cream-dim:#cfc2ab;
+  --paper:#f7f1e4; --ink:#2a2136; --ink-soft:#5a4f6b; --maxw:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--midnight);color:var(--cream);line-height:1.65;font-size:1.0625rem}
+img{max-width:100%;display:block}
+a{color:var(--gold-bright)}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--midnight);padding:.6rem 1rem;z-index:300;font-weight:600}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:2px}
+header{position:sticky;top:0;z-index:100;background:rgba(22,16,34,.93);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,94,.22)}
+.nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;gap:1rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--cream)}
+.brand img{height:42px;width:auto;display:block}
+.brand .mark{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;color:var(--gold-bright);display:none}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none;flex-wrap:wrap}
+.nav-links a{color:var(--cream);text-decoration:none;font-size:.92rem;font-weight:500;padding:.35rem 0;border-bottom:2px solid transparent}
+.nav-links a:hover{color:var(--gold-bright);border-bottom-color:var(--gold)}
+.nav-links a[aria-current]{color:var(--gold-bright);border-bottom-color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--midnight)!important;font-weight:700;padding:.5rem 1.15rem!important;border-radius:999px;border-bottom:none!important}
+.nav-cta:hover{background:var(--gold-bright)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.12}
+h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:1rem}
+section{padding:4.5rem 0}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.98rem;padding:.8rem 1.7rem;border-radius:999px;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--midnight)}
+.btn-gold:hover{background:var(--gold-bright)}
+.btn-outline{border:1.5px solid var(--gold);color:var(--gold-bright)}
+.btn-outline:hover{background:rgba(201,162,94,.12)}
+
+.news-hero{position:relative;text-align:center;padding:5.5rem 1.25rem 4rem;background:
+  radial-gradient(ellipse 60% 75% at 50% -10%, rgba(224,189,125,.26), rgba(224,189,125,.05) 45%, transparent 70%),
+  linear-gradient(180deg,#1c1430,var(--midnight) 70%)}
+.news-hero h1{font-size:clamp(2.3rem,5vw,3.6rem);max-width:720px;margin:0 auto 1.1rem}
+.news-hero h1 em{font-style:italic;color:var(--gold-bright)}
+.news-hero p{max-width:560px;margin:0 auto;color:var(--cream-dim)}
+
+/* News feed */
+.feed{display:grid;gap:1.4rem;max-width:760px;margin:0 auto}
+.news-card{background:var(--velvet);border:1px solid rgba(201,162,94,.28);border-radius:16px;padding:1.6rem 1.75rem}
+.news-card .date-chip{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--midnight);background:var(--gold);padding:.25rem .8rem;border-radius:999px;margin-bottom:.8rem}
+.news-card h3{font-size:1.3rem;color:var(--cream);margin-bottom:.5rem}
+.news-card p{color:var(--cream-dim);font-size:.97rem;margin-bottom:.4rem}
+.news-card a.cta{font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--gold)}
+.news-card a.cta:hover{color:var(--gold-bright)}
+
+/* Calendar */
+.cal-section{background:var(--paper);color:var(--ink)}
+.cal-section .eyebrow{color:var(--wine)}
+.cal-section h2{color:var(--ink)}
+.cal-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:start}
+@media (max-width:860px){.cal-wrap{grid-template-columns:1fr}}
+.cal-card{background:#fffdf8;border:1px solid #e6dcc6;border-radius:16px;padding:1.5rem;overflow-x:auto}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;gap:1rem}
+.cal-head h3{font-size:1.25rem;color:var(--ink)}
+.cal-nav{display:flex;gap:.5rem}
+.cal-nav button{font:inherit;font-weight:700;background:none;border:1.5px solid var(--gold);color:var(--wine);width:38px;height:38px;border-radius:50%;cursor:pointer}
+.cal-nav button:hover{background:var(--gold);color:var(--midnight)}
+table.cal{width:100%;border-collapse:collapse;table-layout:fixed}
+table.cal caption{position:absolute;left:-9999px}
+table.cal th{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding:.4rem 0;font-weight:700}
+table.cal td{border:1px solid #efe6d2;height:64px;vertical-align:top;padding:.3rem .35rem;font-size:.85rem;color:var(--ink-soft)}
+table.cal td .dnum{font-weight:600;color:var(--ink)}
+table.cal td.has-event{background:rgba(201,162,94,.14)}
+table.cal td.has-event .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--wine);margin-left:.3rem}
+table.cal td.other{background:#faf6ec;color:#b9ae99}
+.up-list{list-style:none}
+.up-list li{background:#fffdf8;border:1px solid #e6dcc6;border-radius:12px;padding:1rem 1.2rem;margin-bottom:.8rem}
+.up-list .u-date{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
+.up-list .u-title{font-weight:700;color:var(--ink);margin:.15rem 0}
+.up-list .u-detail{font-size:.9rem;color:var(--ink-soft)}
+.cal-note{font-size:.85rem;color:var(--ink-soft);margin-top:1rem}
+
+/* Spotlight */
+.spot{background:
+  radial-gradient(ellipse 55% 65% at 50% 0%, rgba(94,36,52,.5), transparent 65%), var(--midnight)}
+.spot-card{max-width:760px;margin:0 auto;background:var(--velvet);border:1px solid rgba(201,162,94,.35);border-radius:18px;overflow:hidden}
+.spot-card .s-head{background:var(--wine-deep);padding:1.2rem 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.spot-card .s-head .month{font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-bright)}
+.spot-card .s-body{padding:1.75rem}
+.spot-card h3{font-size:1.6rem;color:var(--cream);margin-bottom:.8rem}
+.spot-card p{color:var(--cream-dim);margin-bottom:1rem}
+
+/* Supporters strip */
+.supporters{background:var(--velvet);border-top:1px solid rgba(201,162,94,.2);text-align:center}
+.supporters p{color:var(--cream-dim);max-width:560px;margin:0 auto 1.8rem}
+.supporters .btn{margin:0 .35rem .7rem}
+footer{background:#100b1b;padding:1.8rem 1.25rem;text-align:center}
+footer p{font-size:.82rem;color:#8d8199}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#news">Skip to news</a>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="index.html">
+      <img src="assets/speak-logo.png" alt="SPEAK! Music As Language, back to main site" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="mark">SPEAK!</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Main site</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="news.html" aria-current="page">News</a></li>
+      <li><a class="nav-cta" href="index.html#donate">Donate</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="news-hero">
+  <span class="eyebrow">For everyone in the house</span>
+  <h1>News, events, and <em>the people making noise.</em></h1>
+  <p>Updates from SPEAK! Music As Language: what we are celebrating, where to find us, and when Bernadette teaches.</p>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <span class="eyebrow">The latest</span>
+    <h2>News from SPEAK!</h2>
+    <div class="feed" id="news-feed"><article class="news-card"><span class="date-chip">October 2026</span><h3>Gala week: The Life of a Voice</h3><p>The first annual SPEAK! Gala is Saturday, October 11, 5 to 9 PM, at McMenamins Anderson School in Bothell, landing on the first ever Bernadette Bascom Day. Sunset Luau dinner buffet with every ticket, karaoke all evening (Bernadette closes it out herself), a screening of Bernadette’s Touch, and a silent auction. Tickets from $75, with a $75 option that sponsors a SPEAK! student’s seat.</p><a class="cta" href="https://speakmusicaslanguage.org/gala">Get tickets →</a></article><article class="news-card"><span class="date-chip">October 2026</span><h3>Gala giving is ahead of schedule</h3><p>Three months of community generosity have put gala giving ahead of schedule, before the auction has even opened. Thank you. Every dollar goes to putting students on stage.</p><a class="cta" href="index.html#donate">Join in →</a></article><article class="news-card"><span class="date-chip">September 1, 2026</span><h3>Bothell proclaims Bernadette Bascom Day</h3><p>At Bothell City Council, the proclamation was read naming Bernadette a Hometown Hero and declaring October 11 Bernadette Bascom Day. Sixty-three years after her father was arrested at Gwynn Oak for insisting every person deserves dignity, a city set aside a day for his daughter.</p><a class="cta" href="timeline.html">Read her story →</a></article><article class="news-card"><span class="date-chip">September 2026</span><h3>Fall classes are back in session</h3><p>With the school year underway, SPEAK! classes have resumed. Students are back to breath, rhythm, and song, and working toward their next time on stage.</p></article></div>
+  </div>
+</section>
+
+<section class="cal-section" id="calendar">
+  <div class="wrap">
+    <span class="eyebrow">Mark your calendar</span>
+    <h2>Events and classes</h2>
+    <div class="cal-wrap">
+      <div class="cal-card">
+        <div class="cal-head">
+          <h3 id="cal-title">October 2026</h3>
+          <div class="cal-nav">
+            <button type="button" id="cal-prev" aria-label="Previous month">&larr;</button>
+            <button type="button" id="cal-next" aria-label="Next month">&rarr;</button>
+          </div>
+        </div>
+        <div id="cal-grid"><table class="cal"><caption>October 2026</caption><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td class="other"></td><td class="other"></td><td class="other"></td><td class="other"></td><td><span class="dnum">1</span></td><td><span class="dnum">2</span></td><td><span class="dnum">3</span></td></tr><tr><td><span class="dnum">4</span></td><td><span class="dnum">5</span></td><td><span class="dnum">6</span></td><td><span class="dnum">7</span></td><td><span class="dnum">8</span></td><td><span class="dnum">9</span></td><td><span class="dnum">10</span></td></tr><tr><td class="has-event"><span class="dnum">11</span><span class="dot" title="The Life of a Voice: the first annual SPEAK! Gala"></span></td><td><span class="dnum">12</span></td><td><span class="dnum">13</span></td><td><span class="dnum">14</span></td><td><span class="dnum">15</span></td><td><span class="dnum">16</span></td><td><span class="dnum">17</span></td></tr><tr><td><span class="dnum">18</span></td><td><span class="dnum">19</span></td><td><span class="dnum">20</span></td><td><span class="dnum">21</span></td><td><span class="dnum">22</span></td><td><span class="dnum">23</span></td><td><span class="dnum">24</span></td></tr><tr><td><span class="dnum">25</span></td><td><span class="dnum">26</span></td><td><span class="dnum">27</span></td><td><span class="dnum">28</span></td><td><span class="dnum">29</span></td><td><span class="dnum">30</span></td><td><span class="dnum">31</span></td></tr></tbody></table></div>
+        <p class="cal-note">Gold days have an event. Class dates and times are posted here as each session is scheduled.</p>
+      </div>
+      <div>
+        <h3 style="font-size:1.2rem;color:var(--ink);margin-bottom:1rem">Coming up</h3>
+        <ul class="up-list" id="up-list"><li><span class="u-date">October 11, 2026</span><div class="u-title"><a href="https://speakmusicaslanguage.org/gala" style="color:inherit">The Life of a Voice: the first annual SPEAK! Gala</a></div><div class="u-detail">5 to 9 PM, McMenamins Anderson School, Bothell. Tickets from $75, Sunset Luau buffet included.</div></li><li><span class="u-date">October 11, 2026</span><div class="u-title">Bernadette Bascom Day</div><div class="u-detail">The first annual, proclaimed by the City of Bothell.</div></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spot" id="spotlight">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2.25rem">
+      <span class="eyebrow">Student spotlight</span>
+      <h2>Every month, a voice worth hearing</h2>
+    </div>
+    <div class="spot-card" id="spot-card"><div class="s-head"><span class="month">Spotlight · October 2026</span></div><div class="s-body"><h3>The Wranglers</h3><p>Our first spotlight belongs to the group that started it all. The Wranglers are the Northshore community singing program whose work with Bernadette was captured in the Emmy-winning KING 5 documentary Bernadette’s Touch: young people who practiced breath, rhythm, and melody until the words came, then stood on a real stage and used them.</p><p>Every student who walks into a SPEAK! class today follows the path the Wranglers cleared. This month, and every month after it, this space belongs to the students doing that work right now.</p></div></div>
+  </div>
+</section>
+
+<section class="supporters">
+  <div class="wrap">
+    <span class="eyebrow">Stay close</span>
+    <h2>Be part of what happens next</h2>
+    <p>Every ticket, every gift, and every download carries a student from silence to sound.</p>
+    <a class="btn btn-gold" href="index.html#donate">Donate</a>
+    <a class="btn btn-outline" href="https://speakmusicaslanguage.org/gala">Gala tickets</a>
+    <a class="btn btn-outline" href="https://apps.apple.com/us/app/speak/id1599665238">Get the app</a>
+    <p style="margin-top:1.6rem;font-size:.92rem">Want updates by email? Write to <a href="mailto:info@speakmusicaslanguage.com?subject=Add%20me%20to%20SPEAK!%20updates">info@speakmusicaslanguage.com</a> and we will keep you posted.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 SPEAK! Music As Language, a program of Music as Language, a Washington State 501(c)(3) nonprofit</p>
+</footer>
+
+<script>
+/* ==================================================================
+   HOW TO UPDATE THIS PAGE (no coding knowledge needed)
+
+   1. NEWS: add a new block to the TOP of the NEWS list below.
+      Copy an existing one, change the text between the quotes.
+   2. EVENTS: add a line to EVENTS. date is "YYYY-MM-DD".
+      Classes Bernadette teaches go here too, one line per date.
+   3. SPOTLIGHT: replace the SPOTLIGHT block each month.
+      IMPORTANT: an individual student may only be featured with
+      written family consent on file. Group features of students
+      who already perform publicly are cleared.
+   After editing, the page updates itself when opened.
+================================================================== */
+
+var NEWS = [
+  { date:"October 2026", title:"Gala week: The Life of a Voice",
+    text:"The first annual SPEAK! Gala is Saturday, October 11, 5 to 9 PM, at McMenamins Anderson School in Bothell, landing on the first ever Bernadette Bascom Day. Sunset Luau dinner buffet with every ticket, karaoke all evening (Bernadette closes it out herself), a screening of Bernadette&rsquo;s Touch, and a silent auction. Tickets from $75, with a $75 option that sponsors a SPEAK! student&rsquo;s seat.",
+    link:"https://speakmusicaslanguage.org/gala", linkText:"Get tickets" },
+  { date:"October 2026", title:"Gala giving is ahead of schedule",
+    text:"Three months of community generosity have put gala giving ahead of schedule, before the auction has even opened. Thank you. Every dollar goes to putting students on stage.",
+    link:"index.html#donate", linkText:"Join in" },
+  { date:"September 1, 2026", title:"Bothell proclaims Bernadette Bascom Day",
+    text:"At Bothell City Council, the proclamation was read naming Bernadette a Hometown Hero and declaring October 11 Bernadette Bascom Day. Sixty-three years after her father was arrested at Gwynn Oak for insisting every person deserves dignity, a city set aside a day for his daughter.",
+    link:"timeline.html", linkText:"Read her story" },
+  { date:"September 2026", title:"Fall classes are back in session",
+    text:"With the school year underway, SPEAK! classes have resumed. Students are back to breath, rhythm, and song, and working toward their next time on stage.",
+    link:"", linkText:"" }
+];
+
+var EVENTS = [
+  { date:"2026-10-11", title:"The Life of a Voice: the first annual SPEAK! Gala",
+    detail:"5 to 9 PM, McMenamins Anderson School, Bothell. Tickets from $75, Sunset Luau buffet included.", link:"https://speakmusicaslanguage.org/gala" },
+  { date:"2026-10-11", title:"Bernadette Bascom Day",
+    detail:"The first annual, proclaimed by the City of Bothell." }
+  /* Example class entry, copy and edit:
+  { date:"2026-10-14", title:"SPEAK! class with Bernadette", detail:"Time and location for enrolled families." },
+  */
+];
+
+var SPOTLIGHT = {
+  month:"October 2026",
+  name:"The Wranglers",
+  body:"<p>Our first spotlight belongs to the group that started it all. The Wranglers are the Northshore community singing program whose work with Bernadette was captured in the Emmy-winning KING 5 documentary Bernadette&rsquo;s Touch: young people who practiced breath, rhythm, and melody until the words came, then stood on a real stage and used them.</p><p>Every student who walks into a SPEAK! class today follows the path the Wranglers cleared. This month, and every month after it, this space belongs to the students doing that work right now.</p>"
+};
+
+/* ------------------------- rendering ------------------------- */
+(function(){
+  function el(id){ return document.getElementById(id); }
+
+  /* News feed */
+  var feed = el("news-feed");
+  if(feed && !feed.firstChild){
+    var html = "";
+    for(var i=0;i<NEWS.length;i++){
+      var n = NEWS[i];
+      html += '<article class="news-card"><span class="date-chip">' + n.date + '</span>' +
+              '<h3>' + n.title + '</h3><p>' + n.text + '</p>' +
+              (n.link ? '<a class="cta" href="' + n.link + '">' + n.linkText + ' &rarr;</a>' : '') +
+              '</article>';
+    }
+    feed.innerHTML = html;
+  }
+
+  /* Spotlight */
+  var spot = el("spot-card");
+  if(spot && !spot.firstChild){
+    spot.innerHTML = '<div class="s-head"><span class="month">Spotlight &middot; ' + SPOTLIGHT.month + '</span></div>' +
+                     '<div class="s-body"><h3>' + SPOTLIGHT.name + '</h3>' + SPOTLIGHT.body + '</div>';
+  }
+
+  /* Calendar */
+  var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var view = { y:2026, m:9 }; /* month is 0-based: 9 = October */
+
+  function eventsOn(y,m,d){
+    var key = y + "-" + (m+1 < 10 ? "0" : "") + (m+1) + "-" + (d < 10 ? "0" : "") + d;
+    var out = [];
+    for(var i=0;i<EVENTS.length;i++){ if(EVENTS[i].date === key) out.push(EVENTS[i]); }
+    return out;
+  }
+
+  function renderCal(){
+    var y = view.y, m = view.m;
+    el("cal-title").textContent = MONTHS[m] + " " + y;
+    var first = new Date(y, m, 1).getDay();
+    var days = new Date(y, m+1, 0).getDate();
+    var html = '<table class="cal"><caption>' + MONTHS[m] + ' ' + y + '</caption><thead><tr>';
+    var dows = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    for(var i=0;i<7;i++) html += '<th scope="col">' + dows[i] + '</th>';
+    html += '</tr></thead><tbody><tr>';
+    var cell = 0;
+    for(i=0;i<first;i++){ html += '<td class="other"></td>'; cell++; }
+    for(var d=1; d<=days; d++){
+      var evs = eventsOn(y,m,d);
+      html += '<td' + (evs.length ? ' class="has-event"' : '') + '><span class="dnum">' + d + '</span>' +
+              (evs.length ? '<span class="dot" title="' + evs[0].title + '"></span>' : '') + '</td>';
+      cell++;
+      if(cell % 7 === 0 && d < days) html += '</tr><tr>';
+    }
+    while(cell % 7 !== 0){ html += '<td class="other"></td>'; cell++; }
+    html += '</tr></tbody></table>';
+    el("cal-grid").innerHTML = html;
+  }
+
+  function renderUpcoming(){
+    var sorted = EVENTS.slice().sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+    var html = "";
+    for(var i=0;i<sorted.length;i++){
+      var e = sorted[i];
+      var p = e.date.split("-");
+      var label = MONTHS[parseInt(p[1],10)-1] + " " + parseInt(p[2],10) + ", " + p[0];
+      var t = e.link ? '<a href="' + e.link + '" style="color:inherit">' + e.title + '</a>' : e.title;
+      html += '<li><span class="u-date">' + label + '</span>' +
+              '<div class="u-title">' + t + '</div>' +
+              '<div class="u-detail">' + e.detail + '</div></li>';
+    }
+    el("up-list").innerHTML = html || '<li><div class="u-detail">New dates are posted here as they are scheduled.</div></li>';
+  }
+
+  if(el("cal-grid") && !el("cal-grid").firstChild){ renderCal(); renderUpcoming(); }
+  else { renderUpcoming(); }
+
+  el("cal-prev").onclick = function(){ view.m--; if(view.m<0){view.m=11;view.y--;} renderCal(); };
+  el("cal-next").onclick = function(){ view.m++; if(view.m>11){view.m=0;view.y++;} renderCal(); };
+})();
+</script>
+</body>
+</html>
